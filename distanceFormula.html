@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simulating distance formula between 3 points for Custom Brew Pro.com</title>
+</head>
+<body>
+
+	<script>
+
+// americanBrett = {color: 10, bitterness: 1, alcohol: 1};
+// americanAmberAle = {color: 20, bitterness: 45, alcohol: 6};	
+// console.log(americanBrett.color);
+
+var beerArray = [
+	{beerName: "americanBrett", color: 10, bitterness: 1, alcohol: 1},
+	{beerName: "americanAmberAle", color: 20, bitterness: 45, alcohol: 6}
+	
+];
+
+beerSlider = {
+	color: 15,
+	bitterness: 50,
+	alcohol: 5
+};
+
+	for(var i = 0; i < beerArray.length; i++){
+		var target = [];
+		var distance = Math.sqrt(Math.pow((beerArray[i].color - beerSlider.color), 2) + Math.pow((beerArray[i].bitterness - beerSlider.bitterness), 2) + Math.pow((beerArray[i].alcohol - beerSlider.alcohol), 2));
+			distance = Math.ceil(distance);
+			console.log(distance)	;
+
+			if (distance < 10) {
+				target.push(beerArray[i].beerName);
+			} 
+
+	}
+				console.log(target);
+
+	// console.log(beerArray[1].color);
+
+// beer = {
+// 	color: 15,
+// 	bitterness: 50,
+// 	alcohol: 5
+// };
+
+// beerSlider = {
+// 	color: 10,
+// 	bitterness: 1,
+// 	alcohol: 1
+// };
+
+// 	var distance = Math.sqrt(Math.pow((beer.color - beerSlider.color), 2) + Math.pow((beer.bitterness - beerSlider.bitterness), 2) + Math.pow((beer.alcohol - beerSlider.alcohol) ,2));
+
+// console.log(distance);
+
+	</script>
+</body>
+</html>
