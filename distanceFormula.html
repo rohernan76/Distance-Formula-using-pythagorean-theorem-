@@ -3,7 +3,12 @@
 <head>
 	<title>Simulating distance formula between 3 points for Custom Brew Pro.com</title>
 </head>
+
+
 <body>
+
+
+<div style="max-width: 100%; max-height: 100%; border: 1px solid black;" id="beerImage"></div>
 
 	<script>
 
@@ -12,17 +17,52 @@
 // console.log(americanBrett.color);
 
 var beerArray = [
-	{beerName: "americanBrett", color: 10, bitterness: 1, alcohol: 1},
-	{beerName: "americanAmberAle", color: 20, bitterness: 45, alcohol: 6}
+	{
+	beerName: "americanBrett", 
+	color: 10, 
+	bitterness: 1, 
+	alcohol: 1, 
+	image: "images/american-brett.jpg"
+	},
+
+	{
+	beerName: "americanAmberAle", 
+	color: 20, 
+	bitterness: 45, 
+	alcohol: 6, 
+	image: "images/amber-ale.jpg"
+	},
+	{
+	beerName: "rye-beer", 
+	color: 10, 
+	bitterness: 10, 
+	alcohol: 5, 
+	image: "images/rye-beer.jpg"
+	},
+	{
+	beerName: "pumpkinAle", 
+	color: 10, 
+	bitterness: 20, 
+	alcohol: 5, 
+	image: "images/pumpkin-beer.jpg"
+	},
+	{
+	beerName: "blackAle", 
+	color: 38, 
+	bitterness: 70, 
+	alcohol: 7.5, 
+	image: "images/american-black-ale.jpg"
+	}
 	
 ];
-
+	
 beerSlider = {
-	color: 15,
-	bitterness: 50,
-	alcohol: 5
+	color: 1,
+	bitterness: 1,
+	alcohol: 2
 };
 
+	var content = '';
 	for(var i = 0; i < beerArray.length; i++){
 		var target = [];
 		var distance = Math.sqrt(Math.pow((beerArray[i].color - beerSlider.color), 2) + Math.pow((beerArray[i].bitterness - beerSlider.bitterness), 2) + Math.pow((beerArray[i].alcohol - beerSlider.alcohol), 2));
@@ -30,11 +70,14 @@ beerSlider = {
 			console.log(distance)	;
 
 			if (distance < 10) {
-				target.push(beerArray[i].beerName);
+				// target.push(beerArray[i].beerName);
+				content += '<img src="' + beerArray[i].image + '"/>';
 			} 
 
 	}
-				console.log(target);
+			console.log(content);
+				
+				document.getElementById("beerImage").innerHTML = content;
 
 	// console.log(beerArray[1].color);
 
