@@ -57,17 +57,18 @@ var beerArray = [
 ];
 	
 beerSlider = {
-	color: 1,
-	bitterness: 1,
-	alcohol: 2
+	color: 10,
+	bitterness: 20,
+	alcohol: 5
 };
+
 
 	var content = '';
 	for(var i = 0; i < beerArray.length; i++){
 		var target = [];
 		var distance = Math.sqrt(Math.pow((beerArray[i].color - beerSlider.color), 2) + Math.pow((beerArray[i].bitterness - beerSlider.bitterness), 2) + Math.pow((beerArray[i].alcohol - beerSlider.alcohol), 2));
 			distance = Math.ceil(distance);
-			console.log(distance)	;
+			console.log(distance, beerArray[i].beerName);
 
 			if (distance < 10) {
 				// target.push(beerArray[i].beerName);
@@ -75,7 +76,7 @@ beerSlider = {
 			} 
 
 	}
-			console.log(content);
+			// console.log(content);
 				
 				document.getElementById("beerImage").innerHTML = content;
 
